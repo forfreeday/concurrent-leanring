@@ -1,0 +1,44 @@
+# maven ignore
+target/
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+
+/reapal-wallet-web/log/
+/log/
+/lib/
+/cert/
+/group-admin-web/log/
+/atlassian-ide-plugin.xml
+/group-admin-provider/target/
+/group-admin-common/target/
+/group-admin-web/target/
+/group-admin-job/target/
+/.idea/workspace.xml
+!/.idea/workspace.xml
+/upload/
+/.idea/
