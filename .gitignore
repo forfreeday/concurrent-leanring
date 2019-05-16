@@ -28,17 +28,4 @@ target/
 .DS_Store
 Thumbs.db
 
-/reapal-wallet-web/log/
-/log/
-/lib/
-/cert/
-/group-admin-web/log/
-/atlassian-ide-plugin.xml
-/group-admin-provider/target/
-/group-admin-common/target/
-/group-admin-web/target/
-/group-admin-job/target/
-/.idea/workspace.xml
-!/.idea/workspace.xml
-/upload/
-/.idea/
+
