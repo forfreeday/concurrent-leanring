@@ -1,4 +1,4 @@
-package com.liukai.thread.wait;
+package com.liukai.thread.wait.sample1;
 
 /**
  * Created by kayle on 2016/12/16.
