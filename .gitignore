@@ -5,6 +5,7 @@ target/
 *.zip
 *.tar
 *.tar.gz
+output
 
 # eclipse ignore
 .settings/
