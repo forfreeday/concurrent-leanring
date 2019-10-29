@@ -7,6 +7,7 @@ public class Test {
 
     public static void main(String[] args) {
         TestWait testWait = new TestWait();
+        testWait.setRunning(true);
         Input input = new Input(testWait);
         Output output = new Output(testWait);
         new Thread(input).start();
