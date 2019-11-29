@@ -1,4 +1,4 @@
-package com.liukai.concurrent.thread.threadpool;
+package com.liukai.concurrent.threadpool;
 
 import java.util.concurrent.ArrayBlockingQueue;
 

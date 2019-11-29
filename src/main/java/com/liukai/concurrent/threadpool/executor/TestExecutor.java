@@ -1,4 +1,4 @@
-package com.liukai.concurrent.thread.threadpool.executor;
+package com.liukai.concurrent.threadpool.executor;
 
 import java.util.concurrent.*;
 

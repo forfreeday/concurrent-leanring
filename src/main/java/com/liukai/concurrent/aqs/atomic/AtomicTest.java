@@ -1,4 +1,4 @@
-package com.liukai.concurrent.thread.atomic;
+package com.liukai.concurrent.aqs.atomic;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
