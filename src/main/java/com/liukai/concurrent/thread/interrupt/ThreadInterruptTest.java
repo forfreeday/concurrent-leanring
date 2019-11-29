@@ -6,7 +6,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * Description
+ * 线程中断
  * @author liukai
  * @since 2017/7/4.
  */

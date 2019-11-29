@@ -1,4 +1,4 @@
-package com.liukai.concurrent.thread.lock.reentrantlock;
+package com.liukai.concurrent.aqs.lock.reentrantlock;
 
 public class Output implements Runnable{
        Resource res;

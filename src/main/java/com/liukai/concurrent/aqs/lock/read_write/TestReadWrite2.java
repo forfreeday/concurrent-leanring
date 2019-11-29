@@ -1,4 +1,4 @@
-package com.liukai.concurrent.thread.lock.read_write;
+package com.liukai.concurrent.aqs.lock.read_write;
 
 import java.util.HashMap;
 import java.util.Map;

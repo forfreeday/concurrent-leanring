@@ -1,4 +1,4 @@
-package com.liukai.concurrent.thread.lock;
+package com.liukai.concurrent.aqs.lock;
 
 //import com.utils.ThreadUtil;
 

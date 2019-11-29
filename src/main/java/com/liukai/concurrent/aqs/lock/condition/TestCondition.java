@@ -1,4 +1,4 @@
-package com.liukai.concurrent.thread.lock.condition;
+package com.liukai.concurrent.aqs.lock.condition;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
