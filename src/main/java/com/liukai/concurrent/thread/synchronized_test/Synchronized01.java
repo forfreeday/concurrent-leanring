@@ -7,15 +7,93 @@ package com.liukai.concurrent.thread.synchronized_test;
  * @since 2019-11-29 22:32
  */
 public class Synchronized01 {
+
+
+    private void testLock04() {
+        for (int i = 0; i < 100; i++) {
+            Thread thread = new Thread(new SyncTest());
+            System.out.println(thread.getName());
+            System.out.println(i);
+            thread.start();
+        }
+    }
+
+    public synchronized void testLock02() {
+        SyncTest syncTest = new SyncTest();
+        for (int i = 0; i < 100; i++) {
+            Thread thread = new Thread(syncTest);
+            System.out.println(thread.getName());
+            System.out.println(i);
+            thread.start();
+        }
+    }
+
+    public synchronized void testLock03() {
+        SyncTest syncTest = new SyncTest();
+        Thread thread1 = new Thread(syncTest);
+        Thread thread2 = new Thread(syncTest);
+        Thread thread3 = new Thread(syncTest);
+        Thread thread4 = new Thread(syncTest);
+        thread1.start();
+        thread2.start();
+        thread3.start();
+        thread4.start();
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(Thread.currentThread().getName());
+
+        Synchronized01 synchronized01 = new Synchronized01();
+        synchronized01.testLock02();
+//        synchronized01.testLock03();
+    }
+}
+
+
+class SyncTest implements Runnable {
+
     Object object = new Object();
+    private static int value = 10000;
+
+
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName());
+//        testLock1();
+        testLock2();
+    }
 
     //同步代码块方式
-    public void testLock() {
-        //对象锁
-        synchronized (object) {
+
+    public void testLock1() {
+        //类锁
+        synchronized (Synchronized02.class) {
+            while (value > 0) {
+                try {
+                    Thread.sleep(10);
+                    System.out.println(Thread.currentThread().getName() + "------" + (value--));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
 
         }
     }
 
+    //同步代码块方式
+    public void testLock2() {
+        //对象锁
+        while (value > 0) {
+            synchronized (Synchronized01.class) {
+                try {
+                    Thread.sleep(10);
+                    System.out.println(Thread.currentThread().getName() + "------" + (value--));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
 
+        }
+    }
 }
