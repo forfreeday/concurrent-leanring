@@ -14,17 +14,15 @@ public class TestCallable {
 
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         for (int i = 0; i < 50; i++) {
-            Future<String> future = executorService.submit(new Callable<String>() {
-                public String call()  {
-                    System.out.println(Thread.currentThread().getName() + "...开始执行....");
-                    for (int i = 0; i < 500; i++) {
-                        System.out.println(Thread.currentThread().getName() + "----" + i);
-                        if (i == 300) {
-                            System.out.println(Thread.currentThread().getName() + "处理特殊业务");
-                        }
+            Future<String> future = executorService.submit(() -> {
+                System.out.println(Thread.currentThread().getName() + "...开始执行....");
+                for (int i1 = 0; i1 < 500; i1++) {
+                    System.out.println(Thread.currentThread().getName() + "----" + i1);
+                    if (i1 == 300) {
+                        System.out.println(Thread.currentThread().getName() + "处理特殊业务");
                     }
-                    return Thread.currentThread().getName();
                 }
+                return Thread.currentThread().getName();
             });
 
             futures.add(future);
