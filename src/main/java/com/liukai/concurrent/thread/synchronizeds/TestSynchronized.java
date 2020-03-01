@@ -1,4 +1,4 @@
-package com.liukai.concurrent.thread.synchronized_test;
+package com.liukai.concurrent.thread.synchronizeds;
 
 /**
  * Created by kayle on 2016/12/20.
@@ -18,14 +18,11 @@ public class TestSynchronized {
 
     private void init() {
         final Output output = new Output();
-        new Thread(){
-            @Override
-            public void run() {
-                while (true) {
-                    output.outer1("test");
-                }
+        new Thread(() -> {
+            while (true) {
+                output.outer1("test");
             }
-        }.start();
+        }).start();
         new Thread(){
             @Override
             public void run() {

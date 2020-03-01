@@ -5,7 +5,7 @@ package com.liukai.concurrent.thread.join;
  * 这个例子是一个有疑问的例子：
  *      主线程 join 后，子线程再 join，线程就死锁，这是为什么？
  */
-public class TestJoin {
+public class JoinTest4 {
     public static void main(String[] args) throws InterruptedException {
         JoinObject joinObject = new JoinObject();
         joinObject.setMainThread(Thread.currentThread());

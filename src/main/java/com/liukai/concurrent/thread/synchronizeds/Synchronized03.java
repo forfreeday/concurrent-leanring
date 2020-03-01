@@ -1,4 +1,4 @@
-package com.liukai.concurrent.thread.synchronized_test;
+package com.liukai.concurrent.thread.synchronizeds;
 
 public class Synchronized03 {
     public void method() {

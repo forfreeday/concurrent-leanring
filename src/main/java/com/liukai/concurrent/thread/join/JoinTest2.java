@@ -23,9 +23,9 @@ class JoinA implements Runnable {
     @Override
     public void run() {
         System.out.println("thread1 线程启动");
-        for (int i = 0; i<10; i++) {
+        for (int i = 0; i<1000; i++) {
             try {
-                Thread.sleep(100);
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
