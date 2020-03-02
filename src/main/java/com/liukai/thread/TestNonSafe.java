@@ -25,16 +25,12 @@ public class TestNonSafe {
             }
         }.start();*/
 
-        new Thread(new Runnable() {
-            public void run() {
-                output.sendMail(Thread.currentThread().getName());
-            }
+        new Thread(()->{
+            output.sendMail(Thread.currentThread().getName());
         }).start();
 
-        new Thread(new Runnable() {
-            public void run() {
-                output.sendMail2(Thread.currentThread().getName());
-            }
+        new Thread(()->{
+            output.sendMail2(Thread.currentThread().getName());
         }).start();
     }
 
