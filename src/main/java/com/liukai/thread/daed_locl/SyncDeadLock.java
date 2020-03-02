@@ -12,28 +12,35 @@ public class SyncDeadLock{
     }
  
     private void deadLock(){
-        Thread thread1 = new Thread(new Runnable() {
 
-            public void run() {
-
-            }
-        },"thread1");
- 
-        Thread thread2 = new Thread(new Runnable() {
-
-            public void run() {
+        Thread thread1 = new Thread(()->{
+            synchronized (locka){
+                try{
+                    System.out.println(Thread.currentThread().getName()+" 拿到 lock-A!");
+                    Thread.sleep(500);
+                    System.out.println(Thread.currentThread().getName()+" 睡眠 500ms 后续继执行...!");
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName()+" 偿试获取 lock-B!");
                 synchronized (lockb){
-                    try{
-                        System.out.println(Thread.currentThread().getName()+" 拿到 lock-B!");
-                        Thread.sleep(500);
-                        System.out.println(Thread.currentThread().getName()+" 睡眠 500ms 后续继执行...!");
-                    }catch(Exception e){
-                        e.printStackTrace();
-                    }
-                    System.out.println(Thread.currentThread().getName()+" 偿试获取 lock-A!");
-                    synchronized (locka){
-                        System.out.println(Thread.currentThread().getName()+" 已获得 lock-A!");
-                    }
+                    System.out.println(Thread.currentThread().getName()+" 已获得 lock-B!");
+                }
+            }
+        }, "thread1");
+ 
+        Thread thread2 = new Thread(()->{
+            synchronized (lockb){
+                try{
+                    System.out.println(Thread.currentThread().getName()+" 拿到 lock-B!");
+                    Thread.sleep(500);
+                    System.out.println(Thread.currentThread().getName()+" 睡眠 500ms 后续继执行...!");
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName()+" 偿试获取 lock-A!");
+                synchronized (locka){
+                    System.out.println(Thread.currentThread().getName()+" 已获得 lock-A!");
                 }
             }
         },"thread2");
