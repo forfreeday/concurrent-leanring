@@ -1,4 +1,4 @@
-package com.liukai.thread.static_class;
+package com.liukai.thread.synchronized_test.static_class;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -80,8 +80,8 @@ class JustRun implements Runnable {
     public void run() {
         TestStaticLock walk = new TestStaticLock();
         //成功
-        walk.success();
+//        walk.success();
         //失败
-//        walk.fail();
+        walk.fail();
     }
 }

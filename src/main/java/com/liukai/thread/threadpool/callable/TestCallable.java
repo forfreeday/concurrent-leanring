@@ -1,4 +1,4 @@
-package com.liukai.thread.callable;
+package com.liukai.thread.threadpool.callable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +14,7 @@ public class TestCallable {
 
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         for (int i = 0; i < 50; i++) {
+            // new Callable
             Future<String> future = executorService.submit(new Callable<String>() {
                 public String call()  {
                     System.out.println(Thread.currentThread().getName() + "...开始执行....");

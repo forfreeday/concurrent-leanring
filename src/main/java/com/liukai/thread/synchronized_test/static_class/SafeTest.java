@@ -1,4 +1,4 @@
-package com.liukai.thread.static_class;
+package com.liukai.thread.synchronized_test.static_class;
 
 /**
  * @author liukai
