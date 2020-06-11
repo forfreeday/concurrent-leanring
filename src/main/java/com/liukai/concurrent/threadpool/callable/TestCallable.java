@@ -24,13 +24,11 @@ public class TestCallable {
                 }
                 return Thread.currentThread().getName();
             });
-
             futures.add(future);
         }
 
         //并闭线程池
         executorService.shutdown();
-
         for (Future<String> future : futures) {
             System.out.println("打印任务执行结果: " + future.get());
         }

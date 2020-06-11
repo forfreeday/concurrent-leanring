@@ -4,27 +4,14 @@ package com.liukai.concurrent.thread;
  * Created by kayle on 2016/12/14.
  */
 public class TestNonSafe {
-    TestNonSafe.Output output = null;
+
 
     public static void main(String[] args) {
         new TestNonSafe().init ();
     }
 
-    public void init () {
+    private void init() {
         final TestNonSafe.Output output = new Output();
-/*        new Thread() {
-            @Override
-            public void run() {
-                output.sendMail(Thread.currentThread().getName());
-            }
-        }.start();
-        new Thread() {
-            @Override
-            public void run() {
-                output.sendMail2(Thread.currentThread().getName());
-            }
-        }.start();*/
-
         new Thread(()->{
             output.sendMail(Thread.currentThread().getName());
         }).start();
@@ -35,7 +22,7 @@ public class TestNonSafe {
     }
 
     class Output {
-        String lock = "lock";
+
         /**
          * Description:  重现非唯一资源对象当锁，出现的线程不安全的情况
          *         出现问题的原因是两个线程传入的是不同的对象。
@@ -45,7 +32,7 @@ public class TestNonSafe {
          * @param parames
          * @return void
          */
-        public void sendMail(String parames) {
+        void sendMail(String parames) {
             synchronized (this) {
                 try {
                     Thread.sleep(100);
@@ -58,7 +45,7 @@ public class TestNonSafe {
             }
         }
 
-        public synchronized void sendMail2(String parames) {
+        synchronized void sendMail2(String parames) {
                 try {
                     Thread.sleep(101);
                     for (int i = 0; i < 1000; i++) {

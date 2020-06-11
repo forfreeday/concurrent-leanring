@@ -10,7 +10,6 @@ public class TestWait1 {
         System.out.println(Thread.currentThread().getName());
         synchronized (TestWait1.class) {
 
-            Thread.currentThread();
         }
         System.out.println("线程等待 500ms");
     }

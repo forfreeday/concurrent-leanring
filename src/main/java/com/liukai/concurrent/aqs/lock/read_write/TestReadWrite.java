@@ -14,20 +14,16 @@ public class TestReadWrite {
     public static void main(String[] args) {
         final TestReadWrite testReadWrite = new TestReadWrite();
         for (int i = 0; i < 3; i++) {
-            new Thread(new Runnable() {
-
-                public void run() {
-                    while (true) {
-                        testReadWrite.read();
-                    }
+            new Thread(() -> {
+                while (true) {
+                    testReadWrite.read();
                 }
             }).start();
-            new Thread(new Runnable() {
 
-                public void run() {
-                    while (true) {
-                        testReadWrite.write((int) (Math.random() * 1000));
-                    }
+
+            new Thread(() -> {
+                while (true) {
+                    testReadWrite.write((int) (Math.random() * 1000));
                 }
             }).start();
         }

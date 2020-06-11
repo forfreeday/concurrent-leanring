@@ -1,6 +1,5 @@
 package com.liukai.concurrent.aqs.lock;
 
-//import com.utils.ThreadUtil;
 
 import java.util.concurrent.CountDownLatch;
 

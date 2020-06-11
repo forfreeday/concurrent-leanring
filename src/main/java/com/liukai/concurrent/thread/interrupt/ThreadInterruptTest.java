@@ -2,6 +2,7 @@ package com.liukai.concurrent.thread.interrupt;
 
 import javafx.concurrent.Task;
 
+import java.util.Date;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -13,16 +14,19 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class ThreadInterruptTest {
 
     public static void main(String[] args) {
-        BlockingQueue<Task> queue = new LinkedBlockingQueue<Task>();
+        BlockingQueue<Task> queue = new LinkedBlockingQueue<>();
         boolean interrupted = false;
         try {
             while (true) {
                 try {
+                    System.out.println(new Date());
                     System.out.println("111");
-                    queue.take();
+                    Task take = queue.take();
                     System.out.println("222");
                 } catch (InterruptedException e) {
                     interrupted = true;
+                    System.out.println(new Date());
+                    e.printStackTrace();
                 }
             }
         } finally {

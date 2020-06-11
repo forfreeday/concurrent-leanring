@@ -2,7 +2,7 @@ package com.liukai.concurrent.aqs.atomic;
 
 /**
  * @author liukai
- * @data 2018/10/4 23:08.
+ * @date 2018/10/4 23:08.
  */
 public class GeneralUnsafeThread implements Runnable {
 

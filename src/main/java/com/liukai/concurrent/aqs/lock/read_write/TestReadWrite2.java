@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * Created by kayle on 2017/2/14.
  */
 public class TestReadWrite2 {
-    private Map<String, String> map = new HashMap();
+    private Map<String, String> map = new HashMap<>();
 
     private ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
 
@@ -23,7 +23,8 @@ public class TestReadWrite2 {
                 readWriteLock.readLock().unlock();
                 readWriteLock.writeLock().lock();
                 try {
-                    if (value == null) {        //双重检查，用意是第一个线程写完后 value 是有值的，如果不加这个判断其他线程进来就写一下，这是有问题的。
+                    if (value == null) {
+                        //双重检查，用意是第一个线程写完后 value 是有值的，如果不加这个判断其他线程进来就写一下，这是有问题的。
                         value = "cache";
                     }
                 } finally {
