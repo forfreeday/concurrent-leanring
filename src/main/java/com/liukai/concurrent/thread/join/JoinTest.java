@@ -1,48 +1,27 @@
-//package com.liukai.concurrent.thread.join;
-//
-///**
-// * @author liukai
-// * @since 2019/6/7 16:05.
-// */
-//public class JoinTest {
-//
-//
-//    public static void main(String[] args) throws InterruptedException {
-//        Thread thread1 = new Thread(new JoinA());
-//        thread1.start();
-//        System.out.println("主线程交换执行权");
-//        thread1.join();
-//        System.out.println("主线程重新获得执行权");
-//        Thread thread2 = new Thread(new JoinB());
-//        thread2.start();
-//    }
-//
-//
-//}
-//
-//
-//class JoinA implements Runnable {
-//
-//    @Override
-//    public void run() {
-//        for (int i = 0; i<10; i++) {
-//            try {
-//                Thread.sleep(100);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            System.out.println("joinA -> " + i);
-//        }
-//    }
-//}
-//
-//
-//class JoinB implements Runnable {
-//
-//    @Override
-//    public void run() {
-//        for (int i = 0; i < 10; i++) {
-//            System.out.println("joinB -> " + i);
-//        }
-//    }
-//}
+package com.liukai.concurrent.thread.join;
+
+public class JoinTest {
+    public static void main(String [] args) throws InterruptedException {
+        ThreadJoinTest t1 = new ThreadJoinTest("小明");
+        ThreadJoinTest t2 = new ThreadJoinTest("小东");
+        t1.start();
+        /**join的意思是使得放弃当前线程的执行，并返回对应的线程，例如下面代码的意思就是：
+         程序在main线程中调用t1线程的join方法，则main线程放弃cpu控制权，并返回t1线程继续执行直到线程t1执行完毕
+         所以结果是t1线程执行完后，才到主线程执行，相当于在main线程中同步t1线程，t1执行完了，main线程才有执行的机会
+         */
+        t1.join();
+        t2.start();
+    }
+
+}
+class ThreadJoinTest extends Thread{
+    public ThreadJoinTest(String name){
+        super(name);
+    }
+    @Override
+    public void run(){
+        for(int i=0;i<1000;i++){
+            System.out.println(this.getName() + ":" + i);
+        }
+    }
+}

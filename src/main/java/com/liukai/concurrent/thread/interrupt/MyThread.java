@@ -1,5 +1,8 @@
 package com.liukai.concurrent.thread.interrupt;
 
+/**
+ * 主动中断线程
+ */
 public class MyThread extends Thread {
     @Override
     public void run(){
