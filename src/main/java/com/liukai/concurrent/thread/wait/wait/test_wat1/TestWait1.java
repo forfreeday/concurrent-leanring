@@ -1,4 +1,4 @@
-package com.liukai.concurrent.thread.wait;
+package com.liukai.concurrent.thread.wait.wait.test_wat1;
 
 /**
  * @author liukai
@@ -9,7 +9,8 @@ public class TestWait1 {
     public static void main(String[] args) throws InterruptedException {
         System.out.println(Thread.currentThread().getName());
         synchronized (TestWait1.class) {
-            TestWait1.class.wait(5000);
+
+            Thread.currentThread();
         }
         System.out.println("线程等待 500ms");
     }

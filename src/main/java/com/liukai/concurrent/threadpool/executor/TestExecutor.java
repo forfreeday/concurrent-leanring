@@ -9,9 +9,9 @@ import java.util.concurrent.*;
 public class TestExecutor {
 
     public static void main(String[] args) {
-        //singleTask();     //单任务线程
-//        multiTask();        //固定大小
-//        elasticTask();
+        singleTask();     //单任务线程
+        multiTask();        //固定大小
+        elasticTask();
         multiDelayTask();
         delayTask();
     }

@@ -1,5 +1,7 @@
 package com.liukai.concurrent.aqs.atomic;
 
+import sun.misc.Unsafe;
+
 /**
  * @author liukai
  * @date 2018/10/4 23:08.
