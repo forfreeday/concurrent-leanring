@@ -1,4 +1,4 @@
-package com.liukai.concurrent.aqs.lock.reentrantlock;
+package com.liukai.concurrent.aqs.lock.reentrantlock.test1;
 
 public class Output implements Runnable{
 

@@ -1,4 +1,4 @@
-package com.liukai.concurrent.aqs.lock.reentrantlock;
+package com.liukai.concurrent.aqs.lock.reentrantlock.test1;
 
 //已经存保到笔记
 public class Test {
