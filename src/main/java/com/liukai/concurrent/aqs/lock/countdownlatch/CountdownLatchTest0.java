@@ -17,10 +17,10 @@ public class CountdownLatchTest0 {
                 @Override
                 public void run() {
                     try {
-                        System.out.println("子线程" + Thread.currentThread().getName() + "开始执行");
-                        Thread.sleep((long) (Math.random() * 10000));
-                        System.out.println("子线程"+Thread.currentThread().getName()+"执行完成");
                         latch.countDown();//当前线程调用此方法，则计数减一
+                        System.out.println("子线程" + Thread.currentThread().getName() + "开始执行");
+                        Thread.sleep(100);
+                        System.out.println("子线程"+Thread.currentThread().getName()+"执行完成");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
