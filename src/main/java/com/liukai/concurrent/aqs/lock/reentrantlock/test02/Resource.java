@@ -1,4 +1,4 @@
-package com.liukai.concurrent.aqs.lock.reentrantlock;
+package com.liukai.concurrent.aqs.lock.reentrantlock.test02;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

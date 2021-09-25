@@ -1,4 +1,4 @@
-package com.liukai.concurrent.aqs;
+package com.liukai.concurrent.thread;
 
 public class YieldTest extends Thread {
 
