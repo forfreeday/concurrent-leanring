@@ -15,8 +15,8 @@ public class JoinTest00 {
     }
 
     public static void main(String [] args) throws InterruptedException {
-        ThreadJoinTest t1 = new ThreadJoinTest("小明");
-        ThreadJoinTest t2 = new ThreadJoinTest("小东");
+        ThreadJoinTest t1 = new ThreadJoinTest("嗯哼");
+        ThreadJoinTest t2 = new ThreadJoinTest("啊哈");
         t1.start();
         /**join的意思是使得放弃当前线程的执行，并返回对应的线程，例如下面代码的意思就是：
          程序在main线程中调用t1线程的join方法，则main线程放弃cpu控制权，并返回t1线程继续执行直到线程t1执行完毕
