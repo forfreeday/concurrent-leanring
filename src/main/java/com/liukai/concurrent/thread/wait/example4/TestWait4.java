@@ -11,7 +11,6 @@ public class TestWait4 {
 
     public static void main(String[] args) {
 //        demo3();
-
         TestWait4 testWait4 = new TestWait4();
         TestWait4 testWait42 = new TestWait4();
         System.out.println(testWait4.hashCode());
@@ -20,8 +19,6 @@ public class TestWait4 {
         String key = "aaa";
         int i = (h = key.hashCode()) ^ (h >>> 16);
         System.out.println(i);
-
-
         System.out.println(20>>2);
         System.out.println(20>>>5);
     }
