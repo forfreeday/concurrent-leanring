@@ -1,6 +1,7 @@
-package com.liukai.concurrent.aqs.lock.reentrantlock.test1;
+package com.liukai.concurrent.aqs.lock.reentrantlock.test02;
 
 public class Input implements Runnable{
+
 
        private Resource res;
        public Input(Resource res) {

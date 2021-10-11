@@ -1,4 +1,4 @@
-package com.liukai.concurrent.aqs.lock.reentrantlock.test1;
+package com.liukai.concurrent.aqs.lock.reentrantlock.test02;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -10,6 +10,8 @@ public class Resource {
     private Lock lock = new ReentrantLock();
     private Condition pro_condition = lock.newCondition();
     private Condition cus_condition = lock.newCondition();
+
+
     private int count = 0;
 
     public void set() {
